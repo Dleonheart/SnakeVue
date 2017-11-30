@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <transition-manager>
       <router-view/>
-    </transition-manager>
   </div>
 </template>
 

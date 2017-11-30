@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { TweenMax, TimelineMax, Expo, Sine } from "gsap";
+// import { TweenMax, TimelineMax, Expo, Sine } from "gsap";
 import PolygonHeading from "@/components/PolygonHeading";
 import PolyButton from "@/components/PolyButton";
 
@@ -28,25 +28,11 @@ export default {
   },
 
   created() {
-    this.tl = new TimelineMax();
+    // this.tl = new TimelineMax();
   },
 
   methods: {
-    enter(el, done) {
-      this.tl.onComplete = done;
-      this.tl
-        .from(this.$refs.background, 8, {  x: -150, ease: Expo.easeOut },0)
-        .from(this.$refs.background, 2.5, { opacity: 0},0)
-        .from(this.$refs.logo, 0.4, { opacity: 0, y: 30 }, 0.5)
-        .add(this.$refs.polygons.introTl(), 0.6)
-        .from(this.$refs.button.$el, .5, {opacity: 0}, 0.8)
-    },
 
-    leave (el, done){
-      TweenMax.to(this.tl, 1.5, {timeScale: 4, ease: Expo.easeOut});
-      this.tl.eventCallback('onReverseComplete', done);
-      this.tl.reverse();
-    }
   },
 
   components: {

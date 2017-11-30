@@ -95,17 +95,15 @@
             <span class="char emphasis" v-for="char in lastWord" :key="char">{{char}}</span>
         </div>
     </div>
-    <div class="games" @click="shuffle">
-        <transition-group name="snake-games" tag="ul" appear>
-            <li v-for="(game, index) in gamesList" :key="game">{{game}}</li>
-        </transition-group>
+    <div class="games">
+        <!-- <li v-for="(game, index) in gamesList" :key="game">{{game}}</li> -->
     </div>
 </div>
 </template>
 
 <script>
-import { TweenMax, TimelineMax } from "gsap";
-import { shuffle } from 'lodash';
+// import { TweenMax, TimelineMax } from "gsap";
+// import { shuffle } from 'lodash';
 
 export default {
   name: "snake-widget",
@@ -138,17 +136,6 @@ export default {
   },
 
   methods: {
-    introTl() {
-      let tl = new TimelineMax()
-      let triangles = this.$refs.polygons.querySelectorAll('.triangle')
-      tl.staggerFrom(triangles, .5, {opacity:0}, .1)
-        .staggerFrom(this.$el.querySelectorAll('.heading .char'), .2, {opacity: 0}, .04, 0.3)
-        .from(this.$refs.image, .3, {x:-10, opacity: 0}, .6)
-      return tl
-    },
-    shuffle() {
-        this.gamesList = shuffle(this.gamesList)
-    }
   }
 };
 </script>
