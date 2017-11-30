@@ -1,21 +1,18 @@
 <template>
-    <transition name="main-screen-intro" appear 
-    :css="false"
-    @enter="enter"
-    @leave="leave">
       <section class="main-screen">
         <div class="background" ref="background">
         </div>
         <section class="content">
           <div class="main-logo" ref="logo"><img src="/static/images/metalgear-logo.svg" alt="Metal gear" width="500"></div>
-          <polygon-heading ref="polygons" 
+          <polygon-heading ref="polygons"
                            title="The many faces of snake"
                            :upperCase='true'
                            fontSize="45px"></polygon-heading>
-          <poly-button ref="button">Go!</poly-button>
+          <router-link to="/faces-of-snake">
+            <poly-button ref="button">Go!</poly-button>
+          </router-link>
         </section>
       </section>
-    </transition>
 </template>
 
 <script>
@@ -27,7 +24,6 @@ export default {
   name: "main-screen",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App boy"
     };
   },
 
@@ -47,8 +43,8 @@ export default {
     },
 
     leave (el, done){
-      this.tl.onComplete = done;
-      TweenMax.to(this.tl, 1.5, {timeScale: 4, ease: Expo.easeOut})
+      TweenMax.to(this.tl, 1.5, {timeScale: 4, ease: Expo.easeOut});
+      this.tl.eventCallback('onReverseComplete', done);
       this.tl.reverse();
     }
   },

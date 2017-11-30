@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition-manager>
+      <router-view/>
+    </transition-manager>
   </div>
 </template>
 
@@ -14,8 +16,13 @@ export default {
   @import url('normalize.css');
   @import url('https://fonts.googleapis.com/css?family=Abel');
 
+
+
   body {
-    background-color: #e2e2e2;
+    background-color: #f3f3f3;
     font-family: 'Abel', sans-serif;
+    width: 100%;
+    height: 100%;
   }
+
 </style>
