@@ -1,6 +1,6 @@
-# y
+# SnakeVue
 
-> Animations with vue js
+> UI Animations with vue js workshop material
 
 ## Build Setup
 
