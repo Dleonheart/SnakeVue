@@ -8,9 +8,7 @@
                            title="The many faces of snake"
                            :upperCase='true'
                            fontSize="45px"></polygon-heading>
-          <router-link to="/faces-of-snake">
             <poly-button ref="button">Go!</poly-button>
-          </router-link>
         </section>
       </section>
 </template>

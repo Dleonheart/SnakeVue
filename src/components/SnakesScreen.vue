@@ -2,9 +2,6 @@
   <section class="snakes-screen">
     <div class="widgets">
       <h1 class="title" ref="title">The Codenames of <span>Snake</span></h1>
-      <transition-group ref="transition" name="snakes">
-        <snake-widget v-for="(snake, index) in snakes" :key="snake.name" :title="snake.name" :image="snake.image" :games="snake.games"></snake-widget>
-      </transition-group>
     </div>
   </section>
 </template>
